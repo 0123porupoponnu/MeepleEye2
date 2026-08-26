@@ -1,0 +1,7 @@
+const defs=[['修道院',3],['道付き修道院',2],['4辺都市',1],['リップ',5],['左折',3],['右折',3],['アンダーバー',3],['平行',2],['隣接',3],['土管',2],['2辺',3],['道付き2辺',3],['3辺',1],['道付き3辺',1],['T字リップ',4]];
+let s=JSON.parse(localStorage.getItem('meepleEye002')||'null')||defs.map(d=>({n:d[0],c:d[1]}));let hist=[];const g=document.getElementById('grid');
+function draw(){g.innerHTML='';let total=0;s.forEach((t,i)=>{total+=t.c;let d=document.createElement('div');d.className='tile'+(t.c==1?' warn':'');d.innerHTML=`<div>${t.n}</div><div class=count>${t.c}</div>`;d.onclick=()=>{if(t.c>0){hist.push(JSON.stringify(s));t.c--;save();draw();}};d.oncontextmenu=e=>e.preventDefault();d.addEventListener('pointerdown',e=>{let tm=setTimeout(()=>{hist.push(JSON.stringify(s));t.c++;save();draw();},550);d.onpointerup=()=>clearTimeout(tm);d.onpointerleave=()=>clearTimeout(tm);});g.appendChild(d);});document.getElementById('remain').textContent=total;}
+function save(){localStorage.setItem('meepleEye002',JSON.stringify(s));}
+document.getElementById('reset').onclick=()=>{hist.push(JSON.stringify(s));s=defs.map(d=>({n:d[0],c:d[1]}));save();draw();};
+document.getElementById('undo').onclick=()=>{if(hist.length){s=JSON.parse(hist.pop());save();draw();}};
+draw();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
