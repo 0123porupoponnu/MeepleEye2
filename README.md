@@ -1,2 +1,1 @@
-# Meeple Eye Build004.1
-GitHub Pages完成版
+# Meeple Eye Build004.2
