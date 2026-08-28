@@ -13,7 +13,7 @@ const init=[['修道院',4,'tiles/tile_monastery.png'],
 ['T字リップ',3,'tiles/tile_city_tjunction.png'],
 ['土管',3,'tiles/tile_city_3side.png'],
 ['2辺',5,'tiles/tile_city_3side_road.png'],
-['道付2辺',5,'tiles/tile16.png'],
+['道付2辺',5,'tiles/tile_city_2side_road.png'],
 ['3辺',4,'tiles/tile17.png'],
 ['道付3辺',3,'tiles/tile18.png'],                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 let tiles=init.map(x=>({...{name:x[0],count:x[1],start:x[1]}}));let history=[];
