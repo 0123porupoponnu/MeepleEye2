@@ -1,1 +1,1 @@
-Meeple Eyeアイコン(icon-192.png)を入れる
+上書きするファイル: index.html style.css app.js
