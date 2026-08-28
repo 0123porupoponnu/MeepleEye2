@@ -1,1 +1,8 @@
-const defs=[['修道院',4],['道付き修道院',2],['ストレート',8],['カーブ',9],['三叉路',4],['十字路',1],['リップ',5],['アンダーバー',3],['隣接',2],['平行',3],['右折',3],['左折',3],['T字リップ',3],['土管',3],['2辺',5],['道付き2辺',5],['3辺',4],['道付き3辺',3],['4辺',1]];let s=JSON.parse(localStorage.me006||'null')||Object.fromEntries(defs);let h=[];const g=document.getElementById('grid');const t=document.getElementById('total');function draw(){g.innerHTML='';let sum=0;defs.forEach(([n],i)=>{sum+=s[n];const c=document.createElement('div');c.className='card'+(s[n]==1?' low':'');c.innerHTML=`<img src='tiles/${i+1}.png'><div class=name>${n}</div><div class=count>${s[n]}</div>`;c.onclick=()=>{if(s[n]>0){h.push(JSON.stringify(s));s[n]--;localStorage.me006=JSON.stringify(s);draw();}};g.appendChild(c)});t.textContent=sum}draw();undo.onclick=()=>{if(h.length){s=JSON.parse(h.pop());localStorage.me006=JSON.stringify(s);draw();}};reset.onclick=()=>{s=Object.fromEntries(defs);h=[];localStorage.me006=JSON.stringify(s);draw();};if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
+const t=[
+["修道院",4],["道付修道院",2],["ストレート",8],["カーブ",9],
+["三叉路",4],["十字路",1],["リップ",5],["アンダーバー",3],
+["隣接",2],["平行",3],["右折",3],["左折",3],
+["T字リップ",3],["土管",3],["2辺",5],["道付2辺",5],
+["3辺",4],["道付3辺",3],["4辺",1]];
+const g=document.getElementById("grid");
+t.forEach((x,i)=>g.innerHTML+=`<div class=card><img src="tiles/tile${i+1}.png" onerror="this.src='icons/icon-192.png'"><div class=n>${x[0]}</div><div class=c>${x[1]}</div></div>`);
