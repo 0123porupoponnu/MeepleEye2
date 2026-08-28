@@ -41,7 +41,11 @@ function draw() {
 
     const card = document.createElement('div');
     card.className = 'card';
+const d=document.createElement('div');
+d.className='card';
 
+    d.onclick=()=>{if(x.count>0){x.count--;history.push(i);draw();}};
+   
     card.innerHTML = `
       <img src="${x.img}" alt="${x.name}">
       <div class="name">${x.name}</div>
