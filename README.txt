@@ -1,1 +1,3 @@
-上書きするファイル: index.html style.css app.js
+Build007パッチ
+GitHubの app.js をこのファイルで上書きしてください。
+三叉路と十字路の画像対応を修正済み。
