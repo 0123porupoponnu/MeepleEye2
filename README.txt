@@ -1,1 +1,1 @@
-icon-192.pngをここへ
+Meeple Eyeアイコン(icon-192.png)を入れる
