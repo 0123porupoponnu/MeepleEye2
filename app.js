@@ -4,7 +4,7 @@ shogiSound.volume=0.38;
 const init=[
 ['修道院',4,'tiles/tile_monastery.png'],['道付修道院',2,'tiles/tile_monastery_road.png'],
 ['ストレート',8,'tiles/tile_straight.png'],['カーブ',9,'tiles/tile_curve.png'],
-['三叉路',4,'tiles/tile_tjunction.png'],['十字路',1,'tiles/tile_crossroad.png'],
+['三叉路',4,'tiles/tile_tjunctioncrossroad.png'],['十字路',1,'tiles/tile_crossroad.png'],
 ['リップ',5,'tiles/tile_city_cap.png'],['アンダーバー',3,'tiles/tile_city_road.png'],
 ['隣接',2,'tiles/tile_city_side.png'],['平行',3,'tiles/tile_city_parallel.png'],
 ['右折',3,'tiles/tile_city_curve.png'],['左折',3,'tiles/tile_city_road_curve.png'],
